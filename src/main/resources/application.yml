@@ -1,7 +1,6 @@
 spring:
   application:
     name: boot-blog
-
   # ?? ?? ??
   profiles:
     active: dev
@@ -24,8 +23,8 @@ spring:
   # ????
   security :
     user :
-      name: disabled
-      password : disabled
+      name: hello
+      password : world
 
   # JPA
   jpa:
