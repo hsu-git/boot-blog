@@ -28,7 +28,7 @@ public class DiaryController {
     @GetMapping("/new")
     public String form(Model model) {
         model.addAttribute("message", "폼임");
-        model.addAttribute("form", new DiaryForm("", ""));
+        model.addAttribute("form", new DiaryForm("", "", null));
         return "diary/form";
     }
 
@@ -39,6 +39,6 @@ public class DiaryController {
         diary.setContent(form.content());
         Diary result = diaryService.createDiary(diary);
         redirectAttributes.addFlashAttribute("message", result.getUuid());
-        return "redirect:/diary";
+        return "redirect:/diary/list";
     }
 }
